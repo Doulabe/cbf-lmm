@@ -240,7 +240,7 @@ Rscript sim/bench_full/47_exact_score_ablation.R                   # Bayes facto
 Rscript sim/bench_full/48_exact_reml_rho098.R                      # same-node ablation arm at rho = 0.98
 
 # Stage 5x: robustness and sensitivity analyses (Appendices C-D)
-Rscript sim/bench_full/50_semisynth_matching.R --cores 5 --B 200   # one-to-one matching metrics (Table 3)
+Rscript sim/bench_full/50_semisynth_matching.R --cores 5 --B 200   # one-to-one matching metrics (Table 4)
 Rscript sim/bench_full/51_pip_thresholds.R     --cores 5 --B 100   # SuSiE/BayesR PIP-threshold sensitivity (Appendix D)
 Rscript sim/bench_full/52_mcmc_stability.R     --cores 5 --B 10    # MCMC chain-length control (Appendix D)
 Rscript sim/bench_full/53_correlated_causals.R --cores 5 --B 100   # same-block correlated-causal stress test (Appendix C)
@@ -252,7 +252,7 @@ bash sim/bench_full/58_driver_bayesr_long.sh                       # 55-57: Baye
 Rscript sim/bench_full/62_make_pooled_tables.R                     # pooled tables (paper pooling rule)
 Rscript sim/bench_full/60_make_exact_tables.R                      # remaining manuscript tables
 Rscript sim/bench_full/61_make_summaries_figures.R                 # summary CSVs and figures
-Rscript sim/bench_full/63_make_matching_tables.R                   # Table 3 and by-locus table
+Rscript sim/bench_full/63_make_matching_tables.R                   # Table 4 and by-locus table
 Rscript sim/bench_full/64_make_appendix_tables.R                   # Appendix C/D tables
 Rscript sim/bench_full/65_make_geuvadis_table.R
 Rscript sim/bench_full/66_make_cbf_figures.R
