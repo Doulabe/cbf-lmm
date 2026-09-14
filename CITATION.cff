@@ -1,0 +1,60 @@
+cff-version: 1.2.0
+title: >-
+  CBF-LMM: Conditional Bayes-Factor Selection with an Adaptive
+  Polygenic Background
+message: >-
+  If you use this software, please cite both the manuscript and the
+  software itself using the metadata below.
+type: software
+authors:
+  - family-names: Doulabe
+    given-names: "Kossi N."
+    orcid: "https://orcid.org/0009-0005-6317-5654"
+    affiliation: >-
+      Département de Mathématiques et de Statistique, Université Laval,
+      Québec, Canada
+  - family-names: Lakhal-Chaieb
+    given-names: "Lajmi"
+    orcid: "https://orcid.org/0000-0002-8358-4392"
+    affiliation: >-
+      Département de Mathématiques et de Statistique, Université Laval,
+      Québec, Canada
+abstract: >-
+  CBF-LMM is a conditional Bayes-factor stepwise procedure for
+  refining candidate regions under an adaptive linear mixed-model
+  polygenic background that excludes the candidate under
+  evaluation.  At
+  each step the candidate-specific marginal likelihood integrates the
+  residual variance analytically and the variance-component ratio is
+  numerically marginalised by one-dimensional Gauss-Legendre
+  quadrature; model growth is controlled by a profile-maximum-likelihood
+  extended BIC on the full accepted model.  The
+  conditional Bayes factor recovers Wakefield's approximate Bayes
+  factor asymptotically in the residual degrees of freedom.  A plug-in REML evaluation of the
+  variance-component ratio and a posterior-score stopping rule are
+  provided as sensitivity options, and an exploratory joint
+  Schur-complement score is retained for future development.
+keywords:
+  - "Bayesian variable selection"
+  - "linear mixed model"
+  - "Bayes factor"
+  - "genetic fine-mapping"
+  - "polygenic background"
+  - "stepwise selection"
+  - "extended BIC"
+  - "Gauss-Legendre quadrature"
+license: MIT
+preferred-citation:
+  type: article
+  title: >-
+    Conditional Bayes-Factor Selection with an Adaptive Polygenic
+    Background
+  authors:
+    - family-names: Doulabe
+      given-names: "Kossi N."
+      orcid: "https://orcid.org/0009-0005-6317-5654"
+    - family-names: Lakhal-Chaieb
+      given-names: "Lajmi"
+      orcid: "https://orcid.org/0000-0002-8358-4392"
+  year: 2026
+  journal: "(submitted)"
