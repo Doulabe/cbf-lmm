@@ -11,15 +11,13 @@ cost**: one pool eigendecomposition per step plus Sherman–Morrison rank-one
 downdates deliver every `V_jk^{-1}` and `|V_jk|` in closed form (validated
 against a brute-force per-candidate eigendecomposition to 2e-13).
 The candidate enters as one additional fixed effect; the residual variance is integrated out analytically, the
-variance-component ratio $\delta$ is **numerically marginalised** by
+variance-component ratio $\delta$ is **numerically marginalized** by
 one-dimensional Gauss–Legendre quadrature, and model growth is controlled by
 a **profile-ML extended BIC** on the full accepted model (the empty set is a
 possible return).  A per-candidate **REML plug-in** for $\delta$, a
 **Score-LMM ranking ablation** (`rank_by = "score"`), a posterior-score
-stopping rule, and the **amortised pool-kernel variant**
-(`MS_L_LMM_stepwise_fast()`) are available as sensitivity options; an
-exploratory **joint Schur-complement** score is retained for future
-development.
+stopping rule, and the **amortized pool-kernel variant**
+(`MS_L_LMM_stepwise_fast()`) are available as sensitivity options. 
 
 > Reference: K. N. Doulabe and L. Lakhal-Chaieb, *Conditional Bayes-Factor
 > Selection with an Adaptive Polygenic Background*, 2026 (submitted).
@@ -36,18 +34,18 @@ candidates.
 | **CBF-LMM** (primary: exact `K_jk` + profile-ML eBIC) | `CBF_LMM_stepwise_exact()` in `R/CBF_LMM_exact.R` (defaults: `delta_eval = "marginal"`) | primary |
 | Per-candidate REML plug-in for $\delta$ | `CBF_LMM_stepwise_exact(delta_eval = "reml")` | sensitivity |
 | Conditional Score-LMM ranking ablation | `CBF_LMM_stepwise_exact(rank_by = "score")` | ablation |
-| Amortised pool-kernel variant (`G_k` for all candidates) | `CBF_LMM_stepwise()` = `MS_L_LMM_stepwise_fast()` | variant (Appendix B) |
-| Posterior-score stopping | `criterion = "JointPosterior"` (amortised variant) | sensitivity |
-| Joint Schur-complement score | `JS_L_LMM_stepwise_fast()` | exploratory / future work |
+| Amortized pool-kernel variant (`G_k` for all candidates) | `CBF_LMM_stepwise()` = `MS_L_LMM_stepwise_fast()` | variant (Appendix B) |
+| Posterior-score stopping | `criterion = "JointPosterior"` (amortized variant) | sensitivity |
+
 
 ## Highlights
 
 - **Closed-form conditional Bayes factor** at fixed $\delta$, valid for any
   step $k \ge 1$ under a point-normal $g$-prior on the candidate effect, a
   Jeffreys prior on $\sigma^2$, and weakly-informative priors on the nuisance
-  parameters.  Strictly generalises the Wakefield approximate Bayes factor
+  parameters.  Strictly generalizes the Wakefield approximate Bayes factor
   (recovered as $\delta \to 0$ at $k = 1$).
-- **Primary operating point (CBF-LMM)**: $\delta$-marginalised evaluation
+- **Primary operating point (CBF-LMM)**: $\delta$-marginalized evaluation
   (Gauss–Legendre quadrature over a half-Cauchy prior on $\sqrt\delta$) with
   eBIC stopping ($\gamma = 1$, parsimony-oriented).
 - **Sensitivity options**: a fast plug-in **REML** evaluation of $\delta$
@@ -56,7 +54,7 @@ candidates.
   stopping rule (`criterion = "JointPosterior"`, recall-oriented).
 - **Covariate extension**: the conditioning block extends to arbitrary fixed
   covariates (sex, batch, family, …) without modification to the Bayes-factor
-  algebra; this extension and the exploratory **joint Schur-complement** score
+  algebra. This extension and the exploratory **joint Schur-complement** score
   (more stable under within-block LD saturation) are discussed as future
   directions in the manuscript.
 - **Comparators** (same $X$, $y$): BayesB (BGLR; 2,000 iterations / 400 burn-in)
@@ -100,8 +98,7 @@ res_reml <- CBF_LMM_stepwise(y, X, tau2 = 0.04, K_max = 10L,
 ```
 
 See [`examples/quickstart.R`](examples/quickstart.R) for a complete runnable
-example and [`examples/real_data_example.R`](examples/real_data_example.R) for a
-minimal mouse-BMI analysis.
+example. 
 
 ### Choosing the slab variance $\tau^2$ (empirical-Bayes option)
 
